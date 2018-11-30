@@ -332,3 +332,12 @@ export function toCoin(value: string | number | BigNumber): BigNumber;
 export function fromCoin(value: string | number | BigNumber): BigNumber;
 
 export function MapToObject( input: Map<string, any> ): any;
+
+// Added by Yang Jun 2018-11-29, for wallet.ts
+export type Options = Map<string, any>;
+
+export type Command = { command?: string, options: Options };
+export function parseCommand(argv: string[]): Command | undefined;
+export function initUnhandledRejection(logger: LoggerInstance): void;
+
+export function MapFromObject(input: any): Map<string, any>;
